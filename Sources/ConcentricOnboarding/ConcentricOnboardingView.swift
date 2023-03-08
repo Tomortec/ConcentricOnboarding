@@ -120,7 +120,8 @@ public struct ConcentricOnboardingView<Content>: View, Animatable where Content:
         Image(systemName: nextIcon)
             .resizable()
             .aspectRatio(contentMode: .fit)
-            .frame(width: 10, height: 20)
+            .frame(width: 20, height: 20)
+            .fontWeight(.bold)
             .foregroundColor(backgroundColor)
     }
     
