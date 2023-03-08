@@ -121,7 +121,6 @@ public struct ConcentricOnboardingView<Content>: View, Animatable where Content:
             .resizable()
             .aspectRatio(contentMode: .fit)
             .frame(width: 20, height: 20)
-            .fontWeight(.bold)
             .foregroundColor(backgroundColor)
     }
     
