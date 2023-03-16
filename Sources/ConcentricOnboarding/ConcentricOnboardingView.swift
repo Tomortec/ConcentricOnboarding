@@ -106,7 +106,7 @@ public struct ConcentricOnboardingView<Content>: View, Animatable where Content:
             Button(action: tapAction) {
                 ZStack {
                     Circle()
-                        .foregroundColor(isAnimated ? .clear : circleColor)
+                        .foregroundColor(isAnimated ? .clear : white)
                         .frame(width: 2 * radius, height: 2 * radius)
                     nextImage
                 }
