@@ -58,8 +58,11 @@ public struct ConcentricOnboardingView<Content>: View, Animatable where Content:
     private var outAnimation: Animation { .easeOut(duration: duration / 2) }
     private var fullAnimation: Animation { .easeInOut(duration: duration) }
     
-    public init(pageContents: [PageContent]) {
+    private var accessibilityPrompt: String
+    
+    public init(pageContents: [PageContent], accessibilityPrompt: String) {
         self.pageContents = pageContents
+        self.accessibilityPrompt = accessibilityPrompt
         
         if pageContents.indices.contains(0) {
             _backgroundColor = State(initialValue: pageContents[0].background)
@@ -111,6 +114,7 @@ public struct ConcentricOnboardingView<Content>: View, Animatable where Content:
                     nextImage
                 }
                 .offset(x: -1.0, y: 0.0)
+                .accessibilityLabel(accessibilityPrompt)
             }
             .disabled(isAnimated)
         }
