@@ -93,8 +93,17 @@ public struct ConcentricOnboardingView<Content>: View, Animatable where Content:
     private var mainContent: some View {
         ZStack {
             backgroundColor
+                .accessibilityHidden(true)
+            
             currentPages
-            button
+            
+            if UIScreen.main.nativeBounds.height < 1750 {
+                button
+                    .offset(x: 0.0, y: 288.0)
+            } else {
+                button
+                    .offset(x: 0.0, y: 320.0)
+            }
         }
     }
     
@@ -118,7 +127,6 @@ public struct ConcentricOnboardingView<Content>: View, Animatable where Content:
             }
             .disabled(isAnimated)
         }
-        .offset(y: 320)
     }
     
     private var nextImage: some View {
